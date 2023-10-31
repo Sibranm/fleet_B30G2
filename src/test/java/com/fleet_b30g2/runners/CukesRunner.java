@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/fleet_b30g2/step_definitions",
-        dryRun = true,
-        tags = "@storeManager",
+        dryRun = false,
+        tags = "@wip",
         publish = true //generating a report with public link,
 
 )
