@@ -8,15 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public class VehicleContractsPage extends BasePage{
 
-    public VehicleContractsPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
-
     @FindBy (xpath = "(//span[@class='title title-level-1'])[2]")
     public WebElement hoverFleetButton;
 
     @FindBy(xpath = "(//span[@class='title title-level-2'])[6]")
     public WebElement vehicleContracts;
+
+    @FindBy(xpath = "(//div[@class='message'])[2]")
+    public WebElement permissionMessage;
 
 
 }
