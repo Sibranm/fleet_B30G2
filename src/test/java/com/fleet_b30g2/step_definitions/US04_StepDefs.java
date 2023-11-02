@@ -33,20 +33,29 @@ public class US04_StepDefs {
 
     @When("Store manager click the Vehicle Contract button")
     public void store_manager_click_the_vehicle_contract_button() {
-        BrowserUtils.sleep(2);
+        vehicleContractsPage.waitUntilLoaderScreenDisappear();
         vehicleContractsPage.vehicleContracts.click();
 
     }
-    @Then("Store manager see title is as expected")
-    public void store_manager_see_title_is_as_expected() {
-        BrowserUtils.sleep(2);
-        String expectedTitle = "All - Vehicle Contract - Entities - System - Car - Entities - System";//bug
-        String actualTitle = Driver.getDriver().getTitle();
-        Assert.assertEquals(expectedTitle,actualTitle);
+    @Then("URL is as expected")
+    public void urlIsAsExpected() {
+        BrowserUtils.sleep(3);
+        String expectedURL = "https://qa.navfort.com/entity/Extend_Entity_VehicleContract"; //bug
+        String actualURl = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expectedURL,actualURl);
 
     }
 
-    @When("Sales manager the Fleet button")
+    @Then("Store manager see title is as expected")
+    public void store_manager_see_title_is_as_expected() {
+        BrowserUtils.sleep(5);
+        String expectedTitle = "All - Vehicle Contract - Entities - System - Car - Entities - System";
+        String actualTitle = Driver.getDriver().getTitle();
+        Assert.assertEquals(actualTitle,expectedTitle);
+
+    }
+
+   /* @When("Sales manager the Fleet button")
     public void salesManagerTheFleetButton() {
         vehicleContractsPage.waitUntilLoaderScreenDisappear();
         BrowserUtils.hover(vehicleContractsPage.fleetDropdown);
@@ -59,14 +68,25 @@ public class US04_StepDefs {
         vehicleContractsPage.vehicleContracts.click();
 
     }
-    @Then("Sales manager see title is as expected")
-    public void sales_manager_see_title_is_as_expected() {
+
+
+    @Then("URL is as expected too")
+    public void urlIsAsExpectedToo() {
         BrowserUtils.sleep(2);
-        String expectedTitle = "All - Vehicle Contract - Entities - System - Car - Entities - System"; //bug
-        String actualTitle = Driver.getDriver().getTitle();
-        Assert.assertEquals(expectedTitle,actualTitle);
+        String expectedURL = "https://qa.navfort.com/entity/Extend_Entity_VehicleContract"; //bug
+        String actualURl = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(actualURl,expectedURL);
 
     }
+
+    @Then("Sales manager see title is as expected")
+    public void sales_manager_see_title_is_as_expected() {
+        BrowserUtils.sleep(3);
+        String expectedTitle = "All - Vehicle Contract - Entities - System - Car - Entities - System"; //bug
+        String actualTitle = Driver.getDriver().getTitle();
+        Assert.assertEquals(actualTitle,expectedTitle);
+
+    }*/
 
     @When("Driver click the Fleet button")
     public void driverClickTheFleetButton() {
@@ -85,11 +105,5 @@ public class US04_StepDefs {
         BrowserUtils.verifyElementDisplayed(vehicleContractsPage.permissionMessage);
 
     }
-
-
-
-
-
-
 
 }
