@@ -14,7 +14,6 @@ public class VehicleContractsPage extends BasePage{
 
         PageFactory.initElements(Driver.getDriver(),this);
 
-
     }
 
     @FindBy(xpath = "//*[contains(text(),' Fleet')]")
