@@ -13,6 +13,10 @@ import java.util.List;
 
 public class DashboardPage extends BasePage{
 
+    public DashboardPage(){
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
+
     private final By dashboardModules = By.xpath("//*[@class='title title-level-1']");
 
     public List<String> modulesList(){
