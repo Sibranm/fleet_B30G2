@@ -25,5 +25,11 @@ public class CalenderEventsPage extends BasePage{
     @FindBy(css = ".validation-failed")
     public WebElement errorMsg;
 
+    @FindBy(xpath = "//iframe[starts-with(@id,'oro_calendar_event_form_description-uid-')]")
+    public WebElement iFrame;
+
+    @FindBy(id = "tinymce")
+    public WebElement descriptionBox;
+
 
 }
